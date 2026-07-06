@@ -1,0 +1,170 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9bb43e36419997ecfe_PPNeueMontreal-Book.otf') format('opentype');
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Neue Montreal';
+  src: url('https://assets.website-files.com/6009ec8cda7f305645c9d91b/60176f9b39c5673e51a86f5a_PPNeueMontreal-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'PP Mondwest';
+  src: url('/PPMondwest-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+
+:root {
+  --font-neue: 'PP Neue Montreal', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-mondwest: 'PP Mondwest', Georgia, 'Times New Roman', serif;
+  --color-primary: #051A24;
+  --color-secondary: #0D212C;
+  --color-muted: #273C46;
+  --color-light: #F6FCFF;
+  --color-light-muted: #E0EBF0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-neue);
+  background: #ffffff;
+  color: var(--color-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-mondwest {
+  font-family: var(--font-mondwest);
+}
+
+.font-neue {
+  font-family: var(--font-neue);
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* ==================== MARQUEE ==================== */
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+@media (max-width: 768px) {
+  .animate-marquee {
+    animation-duration: 10s;
+  }
+}
+
+/* ==================== BUTTON SHADOWS ==================== */
+
+.btn-primary-shadow {
+  box-shadow:
+    0 1px 2px 0 rgba(5, 26, 36, 0.1),
+    0 4px 4px 0 rgba(5, 26, 36, 0.09),
+    0 9px 6px 0 rgba(5, 26, 36, 0.05),
+    0 17px 7px 0 rgba(5, 26, 36, 0.01),
+    0 26px 7px 0 rgba(5, 26, 36, 0),
+    inset 0 2px 8px 0 rgba(255, 255, 255, 0.5);
+}
+
+.btn-secondary-shadow {
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.05),
+    0 4px 30px rgba(0, 0, 0, 0.08);
+}
+
+.btn-tertiary-shadow {
+  box-shadow:
+    0 0 0 0.5px rgba(0, 0, 0, 0.05),
+    0 4px 30px rgba(0, 0, 0, 0.08),
+    inset 0 2px 8px 0 rgba(255, 255, 255, 0.8);
+}
+
+.card-inset-shadow {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06), inset 0 -1px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* ==================== PARALLAX ==================== */
+
+.parallax-image {
+  transition: transform 0.1s linear;
+  will-change: transform;
+}
+
+/* ==================== CAROUSEL ==================== */
+
+.testimonial-carousel-track {
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  will-change: transform;
+}
+
+/* ==================== PARTNER SECTION ==================== */
+
+.partner-gif-spawn {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 12px;
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  animation: gifFadeOut 1000ms ease-out forwards;
+  z-index: 10;
+}
+
+@keyframes gifFadeOut {
+  0% { opacity: 1; transform: scale(1) var(--gif-rotation); }
+  80% { opacity: 0.6; transform: scale(0.9) var(--gif-rotation); }
+  100% { opacity: 0; transform: scale(0.7) var(--gif-rotation); }
+}
+
+/* ==================== SCROLL HIDE SCROLLBAR ==================== */
+
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ==================== STAR ICON ==================== */
+
+.star-filled {
+  fill: currentColor;
+}
