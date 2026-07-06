@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Quote } from 'lucide-react';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import profileImg from '../assets/profil.png';
 
 const TestimonialSection: React.FC = () => {
   const { ref: sectionRef, inView } = useInViewAnimation();
@@ -113,7 +114,7 @@ const TestimonialSection: React.FC = () => {
         >
           <img
             ref={imageRef}
-            src={`${import.meta.env.BASE_URL}profile.jpg`}
+            src={profileImg}
             alt="Wijaya Kusuma"
             className="w-full max-w-xs aspect-[3/4] rounded-2xl shadow-lg object-cover parallax-image"
             style={{ transform: `translateY(${parallaxY}px)` }}
