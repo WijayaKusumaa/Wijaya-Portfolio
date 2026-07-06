@@ -113,7 +113,7 @@ const TestimonialSection: React.FC = () => {
         >
           <img
             ref={imageRef}
-            src="/profile.jpg"
+            src={`${import.meta.env.BASE_URL}profile.jpg`}
             alt="Wijaya Kusuma"
             className="w-full max-w-xs aspect-[3/4] rounded-2xl shadow-lg object-cover parallax-image"
             style={{ transform: `translateY(${parallaxY}px)` }}
