@@ -1,6 +1,7 @@
 import React, { useCallback, useRef } from 'react';
 import Button from './Button';
 import { useInViewAnimation } from '../hooks/useInViewAnimation';
+import wijayaImg from '../assets/wijaya.jpeg';
 
 const marqueeImages = [
   'https://motionsites.ai/assets/hero-space-voyage-preview-eECLH3Yc.gif',
@@ -103,7 +104,7 @@ const PartnerSection: React.FC = () => {
             className="!px-6 !py-3 !rounded-full"
           >
             <img
-              src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=80"
+              src={wijayaImg}
               alt="Wijaya Kusuma"
               className="w-10 h-10 rounded-full object-cover flex-shrink-0 -ml-2"
             />
